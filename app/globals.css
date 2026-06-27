@@ -139,8 +139,17 @@
   --color-lightest-slate: var(--lightest-slate);
   --color-white: var(--white);
   --color-green: var(--green);
+  --color-green-tint: var(--green-tint);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --text-fz-xxs: var(--fz-xxs);
+  --text-fz-xs: var(--fz-xs);
+  --text-fz-sm: var(--fz-sm);
+  --text-fz-md: var(--fz-md);
+  --text-fz-lg: var(--fz-lg);
+  --text-fz-xl: var(--fz-xl);
+  --text-fz-xxl: var(--fz-xxl);
+  --text-fz-heading: var(--fz-heading);
 }
 
 /* ─── Base styles ────────────────────────────────────────────────────────── */
@@ -459,6 +468,7 @@ code {
   font-family: var(--font-mono);
   font-size: var(--fz-md);
   font-weight: 400;
+  text-decoration: none;
 }
 
 .subtitle {
@@ -509,6 +519,28 @@ code {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: var(--transition);
+}
+
+/* ─── Shared component classes ───────────────────────────────────────────── */
+
+.btn {
+  display: inline-block;
+  color: var(--green);
+  background-color: transparent;
+  border: 1px solid var(--green);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--green-tint);
 }
 
 /* ─── Prism syntax highlighting ──────────────────────────────────────────── */

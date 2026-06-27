@@ -9,16 +9,10 @@ interface SideProps {
 
 const Side = ({ children, orientation }: SideProps) => (
   <div
-    style={{
-      width: '40px',
-      position: 'fixed',
-      bottom: 0,
-      left: orientation === 'left' ? '40px' : 'auto',
-      right: orientation === 'left' ? 'auto' : '40px',
-      zIndex: 10,
-      color: 'var(--light-slate)',
-    }}
-    className="hidden lg:block">
+    className={[
+      'w-[40px] fixed bottom-0 z-[10] text-light-slate hidden lg:block',
+      orientation === 'left' ? 'left-[40px]' : 'right-[40px]',
+    ].join(' ')}>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

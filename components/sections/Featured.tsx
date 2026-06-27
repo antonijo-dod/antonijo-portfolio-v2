@@ -43,79 +43,42 @@ const Featured = ({ projects }: FeaturedProps) => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            style={{
-              display: 'grid',
-              gridGap: '10px',
-              gridTemplateColumns: 'repeat(12, 1fr)',
-              alignItems: 'center',
-              marginBottom: i < projects.length - 1 ? '100px' : 0,
-            }}>
+            className="grid gap-[10px] grid-cols-12 items-center"
+            style={{ marginBottom: i < projects.length - 1 ? '100px' : 0 }}>
+
             {/* Content */}
             <div
-              style={{
-                position: 'relative',
-                gridRow: '1 / -1',
-                gridColumn: isOdd ? '7 / -1' : '1 / 7',
-                zIndex: 2,
-                textAlign: isOdd ? 'right' : 'left',
-              }}
-              className="col-span-full md:col-auto p-[40px_40px_30px] md:p-0">
-              <p
-                style={{
-                  margin: '10px 0',
-                  color: 'var(--green)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 'var(--fz-xs)',
-                  fontWeight: 400,
-                }}>
+              className={[
+                'relative z-[2] col-span-full md:col-auto p-[40px_40px_30px] md:p-0',
+                isOdd ? 'md:col-start-7 md:col-end-[-1] text-right' : 'md:col-start-1 md:col-end-7 text-left',
+              ].join(' ')}
+              style={{ gridRow: '1 / -1' }}>
+              <p className="my-[10px] text-green font-mono text-fz-xs font-normal">
                 Featured Project
               </p>
 
-              <h3
-                style={{
-                  color: 'var(--lightest-slate)',
-                  fontSize: 'clamp(24px, 5vw, 28px)',
-                  margin: '0 0 20px',
-                }}>
+              <h3 className="text-lightest-slate text-[clamp(24px,5vw,28px)] mb-5">
                 {title}
               </h3>
 
               <div
-                style={{
-                  position: 'relative',
-                  zIndex: 2,
-                  padding: '25px',
-                  borderRadius: 'var(--border-radius)',
-                  backgroundColor: 'var(--light-navy)',
-                  color: 'var(--light-slate)',
-                  fontSize: 'var(--fz-lg)',
-                  boxShadow: '0 10px 30px -15px var(--navy-shadow)',
-                }}
+                className="relative z-[2] p-[25px] rounded bg-light-navy text-light-slate text-fz-lg shadow-[0_10px_30px_-15px_var(--navy-shadow)]"
                 dangerouslySetInnerHTML={{ __html: contentHtml }}
               />
 
               {tech && (
                 <ul
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    position: 'relative',
-                    zIndex: 2,
-                    margin: '25px 0 10px',
-                    padding: 0,
-                    listStyle: 'none',
-                    justifyContent: isOdd ? 'flex-end' : 'flex-start',
-                  }}>
+                  className={[
+                    'flex flex-wrap relative z-[2] mt-[25px] mb-[10px] p-0 list-none',
+                    isOdd ? 'justify-end' : 'justify-start',
+                  ].join(' ')}>
                   {tech.map((t, j) => (
                     <li
                       key={j}
-                      style={{
-                        margin: isOdd ? '0 0 5px 20px' : '0 20px 5px 0',
-                        color: 'var(--light-slate)',
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: 'var(--fz-xs)',
-                        whiteSpace: 'nowrap',
-                      }}>
+                      className={[
+                        'text-light-slate font-mono text-fz-xs whitespace-nowrap mb-[5px]',
+                        isOdd ? 'ml-5' : 'mr-5',
+                      ].join(' ')}>
                       {t}
                     </li>
                   ))}
@@ -123,25 +86,18 @@ const Featured = ({ projects }: FeaturedProps) => (
               )}
 
               <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  position: 'relative',
-                  marginTop: '10px',
-                  marginLeft: isOdd ? 0 : '-10px',
-                  marginRight: isOdd ? '-10px' : 0,
-                  color: 'var(--lightest-slate)',
-                  justifyContent: isOdd ? 'flex-end' : 'flex-start',
-                }}>
+                className={[
+                  'flex items-center relative mt-[10px] text-lightest-slate',
+                  isOdd ? 'justify-end -mr-[10px]' : 'justify-start -ml-[10px]',
+                ].join(' ')}>
                 {github && (
                   <a
                     href={github}
                     aria-label="GitHub Link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}
-                    className="hover:text-[var(--green)]">
-                    <span style={{ display: 'block', width: '20px', height: '20px' }}>
+                    className="flex items-center justify-center p-[10px] hover:text-green">
+                    <span className="block w-5 h-5">
                       <Icon name="GitHub" />
                     </span>
                   </a>
@@ -152,9 +108,8 @@ const Featured = ({ projects }: FeaturedProps) => (
                     aria-label="External Link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}
-                    className="hover:text-[var(--green)]">
-                    <span style={{ display: 'block', width: '22px', height: '22px' }}>
+                    className="flex items-center justify-center p-[10px] hover:text-green">
+                    <span className="block w-[22px] h-[22px]">
                       <Icon name="External" />
                     </span>
                   </a>
@@ -164,57 +119,24 @@ const Featured = ({ projects }: FeaturedProps) => (
 
             {/* Image */}
             <div
+              className="col-span-full md:col-auto relative z-[1] shadow-[0_10px_30px_-15px_var(--navy-shadow)] opacity-25 md:opacity-100"
               style={{
                 gridRow: '1 / -1',
                 gridColumn: isOdd ? '1 / 8' : '6 / -1',
-                position: 'relative',
-                zIndex: 1,
-                boxShadow: '0 10px 30px -15px var(--navy-shadow)',
-              }}
-              className="col-span-full md:col-auto opacity-25 md:opacity-100">
+              }}>
               <a
                 href={projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  backgroundColor: 'var(--green)',
-                  borderRadius: 'var(--border-radius)',
-                  position: 'relative',
-                }}
-                className="group">
-                <div
-                  style={{
-                    content: '',
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    top: 0,
-                    left: 0,
-                    zIndex: 3,
-                    transition: 'var(--transition)',
-                    backgroundColor: 'var(--navy)',
-                    mixBlendMode: 'screen',
-                    borderRadius: 'var(--border-radius)',
-                  }}
-                  className="group-hover:bg-transparent"
-                />
+                className="group block w-full bg-green rounded relative">
+                <div className="absolute inset-0 z-[3] rounded bg-navy [mix-blend-mode:screen] [transition:var(--transition)] group-hover:bg-transparent" />
                 {coverFilename && (
                   <Image
                     src={imageSrc}
                     alt={title ?? ''}
                     width={700}
                     height={438}
-                    style={{
-                      borderRadius: 'var(--border-radius)',
-                      mixBlendMode: 'multiply',
-                      filter: 'grayscale(100%) contrast(1) brightness(90%)',
-                      display: 'block',
-                      width: '100%',
-                      height: 'auto',
-                    }}
-                    className="group-hover:filter-none group-hover:mix-blend-normal"
+                    className="rounded w-full h-auto block [mix-blend-mode:multiply] [filter:grayscale(100%)_contrast(1)_brightness(90%)] group-hover:filter-none group-hover:[mix-blend-mode:normal]"
                   />
                 )}
               </a>

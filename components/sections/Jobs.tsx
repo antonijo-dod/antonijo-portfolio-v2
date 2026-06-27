@@ -47,24 +47,16 @@ const Jobs = ({ jobs }: JobsProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, ease: [0.645, 0.045, 0.355, 1] }}
-      style={{ maxWidth: '700px' }}>
+      className="max-w-[700px]">
       <h2 className="numbered-heading">Where I&apos;ve Worked</h2>
 
-      <div style={{ display: 'flex' }} className="flex-col sm:flex-row">
+      <div className="flex flex-col sm:flex-row">
         {/* Tab list */}
         <ul
           role="tablist"
           aria-label="Job tabs"
           onKeyDown={onKeyDown}
-          style={{
-            position: 'relative',
-            zIndex: 3,
-            width: 'max-content',
-            padding: 0,
-            margin: 0,
-            listStyle: 'none',
-          }}
-          className="flex overflow-x-auto sm:block sm:w-max w-[calc(100%+100px)] -ml-[50px] mb-[30px] sm:mb-0 sm:ml-0">
+          className="relative z-[3] w-max p-0 m-0 list-none flex overflow-x-auto sm:block w-[calc(100%+100px)] -ml-[50px] mb-[30px] sm:mb-0 sm:ml-0 sm:w-max">
           {jobs.map(({ company }, i) => (
             <li key={i} className="first:ml-[50px] last:pr-[50px] sm:first:ml-0 sm:last:pr-0">
               <button
@@ -75,23 +67,14 @@ const Jobs = ({ jobs }: JobsProps) => {
                 aria-controls={`panel-${i}`}
                 tabIndex={activeTabId === i ? 0 : -1}
                 onClick={() => setActiveTabId(i)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  width: '100%',
-                  height: 'var(--tab-height)',
-                  padding: '0 20px 2px',
-                  borderLeft: '2px solid var(--lightest-navy)',
-                  backgroundColor: 'transparent',
-                  color: activeTabId === i ? 'var(--green)' : 'var(--slate)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 'var(--fz-xs)',
-                  textAlign: 'left',
-                  whiteSpace: 'nowrap',
-                  cursor: 'pointer',
-                  transition: 'var(--transition)',
-                }}
-                className="hover:bg-[var(--light-navy)] focus:bg-[var(--light-navy)] sm:border-l-2 border-l-0 border-b-2 sm:border-b-0 border-b-[var(--lightest-navy)] min-w-[120px] sm:min-w-0">
+                className={[
+                  'flex items-center w-full h-[var(--tab-height)] px-5 pb-0.5',
+                  'border-l-0 border-b-2 sm:border-l-2 sm:border-b-0 border-lightest-navy',
+                  'bg-transparent font-mono text-fz-xs text-left whitespace-nowrap cursor-pointer',
+                  'min-w-[120px] sm:min-w-0 [transition:var(--transition)]',
+                  'hover:bg-light-navy focus:bg-light-navy',
+                  activeTabId === i ? 'text-green' : 'text-slate',
+                ].join(' ')}>
                 {company}
               </button>
             </li>
@@ -100,19 +83,11 @@ const Jobs = ({ jobs }: JobsProps) => {
           {/* Active indicator */}
           <div
             aria-hidden
+            className="hidden sm:block absolute top-0 left-0 z-[10] w-[2px] h-[var(--tab-height)] rounded bg-green"
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 10,
-              width: '2px',
-              height: 'var(--tab-height)',
-              borderRadius: 'var(--border-radius)',
-              background: 'var(--green)',
               transform: `translateY(calc(${activeTabId} * var(--tab-height)))`,
               transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s',
             }}
-            className="hidden sm:block"
           />
         </ul>
 
@@ -126,21 +101,10 @@ const Jobs = ({ jobs }: JobsProps) => {
             aria-labelledby={`tab-${i}`}
             aria-hidden={activeTabId !== i}
             hidden={activeTabId !== i}
-            style={{
-              width: '100%',
-              paddingTop: '10px',
-              paddingLeft: '30px',
-            }}
-            className="sm:pl-[30px] pl-0">
-            <h3
-              style={{
-                marginBottom: '5px',
-                fontSize: 'var(--fz-xxl)',
-                fontWeight: 500,
-                color: 'var(--lightest-slate)',
-              }}>
+            className="w-full pt-[10px] pl-0 sm:pl-[30px]">
+            <h3 className="mb-[5px] text-fz-xxl font-medium text-lightest-slate">
               <span>{title}</span>
-              <span style={{ color: 'var(--green)' }}>
+              <span className="text-green">
                 &nbsp;@&nbsp;
                 <a href={url} className="inline-link">
                   {company}
@@ -148,13 +112,7 @@ const Jobs = ({ jobs }: JobsProps) => {
               </span>
             </h3>
 
-            <p
-              style={{
-                marginBottom: '30px',
-                color: 'var(--light-slate)',
-                fontFamily: 'var(--font-mono)',
-                fontSize: 'var(--fz-xs)',
-              }}>
+            <p className="mb-[30px] text-light-slate font-mono text-fz-xs">
               {range}
             </p>
 

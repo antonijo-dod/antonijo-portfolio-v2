@@ -105,7 +105,7 @@ const Menu = () => {
             <li
               key={i}
               style={{ position: 'relative', margin: '0 auto 20px', fontSize: 'clamp(var(--fz-sm), 4vw, var(--fz-lg))', counterIncrement: 'item 1' }}
-              className="before:content-['0'_counter(item_decimal)_'.'] before:block before:mb-1.5 before:text-[var(--green)] before:text-[var(--fz-sm)]">
+              className="before:content-['0'_counter(item_decimal)_'.'] before:block before:mb-1.5 before:text-green before:text-fz-sm">
               <Link
                 href={url}
                 onClick={() => setMenuOpen(false)}

@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             overflow: 'hidden',
             zIndex: -99,
           }}
-          className="focus:static focus:w-auto focus:h-auto focus:p-4 focus:outline-none focus:rounded focus:bg-[var(--light-navy)] focus:text-[var(--green)] focus:font-mono focus:text-[var(--fz-sm)] focus:z-[99]">
+          className="focus:static focus:w-auto focus:h-auto focus:p-4 focus:outline-none focus:rounded focus:bg-[var(--light-navy)] focus:text-green focus:font-mono focus:text-fz-sm focus:z-[99]">
           Skip to Content
         </a>
 

@@ -2,19 +2,9 @@ import Icon from './icons/Icon';
 import { socialMedia } from '@/lib/config';
 
 const Footer = () => (
-  <footer
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '70px',
-      padding: '15px',
-      textAlign: 'center',
-    }}>
-    {/* Social icons: mobile only */}
-    <div className="block md:hidden w-full max-w-[270px] mx-auto mb-2.5 text-[var(--light-slate)]">
-      <ul style={{ display: 'flex', justifyContent: 'space-between', padding: 0, margin: 0, listStyle: 'none' }}>
+  <footer className="flex flex-col items-center justify-center min-h-[70px] p-[15px] text-center">
+    <div className="block md:hidden w-full max-w-[270px] mx-auto mb-2.5 text-light-slate">
+      <ul className="flex justify-between p-0 m-0 list-none">
         {socialMedia.map(({ name, url }, i) => (
           <li key={i}>
             <a
@@ -23,7 +13,7 @@ const Footer = () => (
               target="_blank"
               rel="noopener noreferrer"
               className="block p-2.5">
-              <span style={{ display: 'block', width: '20px', height: '20px' }}>
+              <span className="block w-5 h-5">
                 <Icon name={name} />
               </span>
             </a>
@@ -32,13 +22,7 @@ const Footer = () => (
       </ul>
     </div>
 
-    <div
-      style={{
-        color: 'var(--light-slate)',
-        fontFamily: 'var(--font-mono)',
-        fontSize: 'var(--fz-xxs)',
-        lineHeight: 1,
-      }}>
+    <div className="text-light-slate font-mono text-fz-xxs leading-none">
       <span>Designed &amp; Built by Antonijo Đođ</span>
     </div>
   </footer>
