@@ -1,9 +1,9 @@
-export const email = 'kontakt@antonijo.com';
+export const email = 'contakt@antonijo.com';
 
 export const socialMedia = [
   { name: 'Facebook', url: 'https://www.facebook.com/a.djodj' },
-  { name: 'GitHub', url: 'https://github.com/antonijoDod' },
-  { name: 'Linkedin', url: 'https://www.linkedin.com/in/antonijo-%C4%91o%C4%91-084b39106/' },
+  { name: 'GitHub', url: 'https://github.com/antonijo-dod' },
+  { name: 'Linkedin', url: 'https://www.linkedin.com/in/antonijo-dod' },
 ];
 
 export const navLinks = [
