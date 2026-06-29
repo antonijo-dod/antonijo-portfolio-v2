@@ -65,8 +65,9 @@ const Nav = () => {
             >
               <Link
                 href="/"
+                id="logo"
                 aria-label="home"
-                className="text-green w-10.5 h-10.5 block [transition:var(--transition)] hover:text-green-tint focus:text-green-tint"
+                className="w-10.5 h-10.5 block [transition:var(--transition)]"
               >
                 <IconLogo />
               </Link>

@@ -337,19 +337,21 @@ svg.feather {
   fill: none;
 }
 
-a {
-  display: inline-block;
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-  color: inherit;
-  position: relative;
-  transition: var(--transition);
-  cursor: pointer;
-}
+@layer base {
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+  }
 
-a:hover,
-a:focus {
-  color: var(--green);
+  a:hover,
+  a:focus {
+    color: var(--green);
+  }
 }
 
 a.inline-link {
