@@ -111,5 +111,5 @@ npm run lint     # Run ESLint
 
 - Color palette and spacing match the original Gatsby v1 portfolio exactly
 - CSS custom properties live in `app/globals.css` under `:root`; Tailwind tokens are bridged via `@theme inline`
-- Tailwind 4 arbitrary `text-[var(--fz-*)]` resolves to `color`, not `font-size` — use `text-fz-*` tokens instead (defined via `--text-fz-*` in `@theme inline`)
+- Font-size values are bridged as named Tailwind utilities via custom properties in `@theme inline`; arbitrary `var()` syntax in text utilities resolves to `color` in Tailwind 4, not `font-size`
 - Framer Motion `whileInView` handles scroll-reveal; `isMounted` guard prevents SSR hydration mismatches

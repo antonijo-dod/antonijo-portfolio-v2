@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@source not "../README.md";
+@source not "../CLAUDE.md";
+@source not "../AGENTS.md";
 
 /* ─── Fonts ──────────────────────────────────────────────────────────────── */
 
