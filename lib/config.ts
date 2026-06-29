@@ -1,4 +1,4 @@
-export const email = 'contakt@antonijo.com';
+export const email = 'contact@antonijo.com';
 
 export const socialMedia = [
   { name: 'Facebook', url: 'https://www.facebook.com/a.djodj' },
