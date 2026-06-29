@@ -114,6 +114,7 @@
   --border-radius: 4px;
   --nav-height: 100px;
   --nav-scroll-height: 70px;
+  --main-padding-top: 200px;
   --tab-height: 42px;
   --tab-width: 120px;
   --hamburger-width: 30px;
@@ -212,17 +213,19 @@ main {
   width: 100%;
   max-width: 1600px;
   min-height: 100vh;
-  padding: 200px 150px;
+  padding: var(--main-padding-top) 150px;
 }
 
 @media (max-width: 1080px) {
-  main { padding: 200px 100px; }
+  main { padding: var(--main-padding-top) 100px; }
 }
 @media (max-width: 768px) {
-  main { padding: 150px 50px; }
+  :root { --main-padding-top: 150px; }
+  main { padding: var(--main-padding-top) 50px; }
 }
 @media (max-width: 480px) {
-  main { padding: 125px 25px; }
+  :root { --main-padding-top: 125px; }
+  main { padding: var(--main-padding-top) 25px; }
 }
 
 main.fill-height {
@@ -334,19 +337,21 @@ svg.feather {
   fill: none;
 }
 
-a {
-  display: inline-block;
-  text-decoration: none;
-  text-decoration-skip-ink: auto;
-  color: inherit;
-  position: relative;
-  transition: var(--transition);
-  cursor: pointer;
-}
+@layer base {
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    position: relative;
+    transition: var(--transition);
+    cursor: pointer;
+  }
 
-a:hover,
-a:focus {
-  color: var(--green);
+  a:hover,
+  a:focus {
+    color: var(--green);
+  }
 }
 
 a.inline-link {
@@ -413,20 +418,20 @@ p > code {
   padding: 0.3em 0.5em;
 }
 
-ul.fancy-list {
+.fancy-list ul {
   padding: 0;
   margin: 0;
   list-style: none;
   font-size: var(--fz-lg);
 }
 
-ul.fancy-list li {
+.fancy-list ul li {
   position: relative;
   padding-left: 30px;
   margin-bottom: 10px;
 }
 
-ul.fancy-list li:before {
+.fancy-list ul li:before {
   content: '▹';
   position: absolute;
   left: 0;

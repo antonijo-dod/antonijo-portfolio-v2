@@ -1,5 +1,5 @@
-import Icon from './icons/Icon';
-import { socialMedia } from '@/lib/config';
+import Icon from "./icons/Icon";
+import { socialMedia } from "@/lib/config";
 
 const Footer = () => (
   <footer className="flex flex-col items-center justify-center min-h-[70px] p-[15px] text-center">
@@ -12,7 +12,8 @@ const Footer = () => (
               aria-label={name}
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-2.5">
+              className="block p-2.5"
+            >
               <span className="block w-5 h-5">
                 <Icon name={name} />
               </span>
@@ -23,7 +24,7 @@ const Footer = () => (
     </div>
 
     <div className="text-light-slate font-mono text-fz-xxs leading-none">
-      <span>Designed &amp; Built by Antonijo Đođ</span>
+      <span>Designed &amp; Built by Antonijo Dod</span>
     </div>
   </footer>
 );

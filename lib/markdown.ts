@@ -38,8 +38,9 @@ export function getMarkdownFiles(dir: string): MarkdownData[] {
 
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContents);
+    const contentHtml = remark().use(html, { sanitize: false }).processSync(content).toString();
 
-    results.push({ slug, contentHtml: content, ...data });
+    results.push({ slug, contentHtml, ...data });
   }
 
   return results;

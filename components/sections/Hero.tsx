@@ -45,7 +45,7 @@ const Hero = () => {
   return (
     <section
       className="flex flex-col items-start justify-center min-h-screen"
-      style={{ marginTop: "-100px" }}
+      style={{ marginTop: "calc(-1 * var(--main-padding-top))" }}
     >
       <AnimatePresence>
         {isMounted &&
