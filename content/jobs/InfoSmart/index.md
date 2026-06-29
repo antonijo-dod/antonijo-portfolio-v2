@@ -1,10 +1,10 @@
 ---
-date: '2018-04-2'
-title: 'Web developer'
-company: 'Info Smart'
-location: 'Croatia'
-range: 'April 2018 - Present'
-url: 'https://www.info-smart.hr/'
+date: "2018-04-2"
+title: "Web developer"
+company: "Info Smart"
+location: "Croatia"
+range: "April 2018 - March 2021"
+url: "https://www.info-smart.hr/"
 ---
 
 - Write modern, performant, maintainable code for a diverse array of client and internal projects
