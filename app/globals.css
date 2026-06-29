@@ -413,20 +413,20 @@ p > code {
   padding: 0.3em 0.5em;
 }
 
-ul.fancy-list {
+.fancy-list ul {
   padding: 0;
   margin: 0;
   list-style: none;
   font-size: var(--fz-lg);
 }
 
-ul.fancy-list li {
+.fancy-list ul li {
   position: relative;
   padding-left: 30px;
   margin-bottom: 10px;
 }
 
-ul.fancy-list li:before {
+.fancy-list ul li:before {
   content: '▹';
   position: absolute;
   left: 0;

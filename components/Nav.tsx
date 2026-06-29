@@ -54,71 +54,70 @@ const Nav = () => {
         className="flex justify-between items-center relative w-full text-lightest-slate font-mono z-[12]"
         style={{ counterReset: "item 0" }}
       >
-        {/* Logo */}
         {isMounted && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="flex items-center justify-center"
-          >
-            <Link
-              href="/"
-              aria-label="home"
-              className="text-green w-[42px] h-[42px] block hover:[&_svg]:fill-green-tint focus:[&_svg]:fill-green-tint [&_svg]:[transition:var(--transition)] [&_svg]:fill-none"
-            >
-              <IconLogo />
-            </Link>
-          </motion.div>
-        )}
-
-        {/* Desktop nav links */}
-        <div className="hidden md:flex items-center">
-          <ol
-            className="flex justify-between items-center p-0 m-0 list-none"
-            style={{ counterReset: "item 0" }}
-          >
-            {isMounted &&
-              navLinks.map(({ url, name }, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.1 }}
-                  className="mx-[5px] relative text-fz-xs"
-                  style={{ counterIncrement: "item 1" }}
-                >
-                  <Link
-                    href={url}
-                    className="px-[10px] py-[10px] inline-block before:content-['0'_counter(item_decimal)_'.'] before:mr-[5px] before:text-green before:text-fz-xxs"
-                  >
-                    {name}
-                  </Link>
-                </motion.li>
-              ))}
-          </ol>
-
-          {isMounted && (
+          <>
+            {/* Logo */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: navLinks.length * 0.1 }}
-              className="ml-[15px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="flex items-center justify-center"
             >
-              <a
-                href="/Antonijo_Dod_CV_2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green bg-transparent border border-green rounded px-4 py-3 font-mono text-fz-xs leading-none no-underline cursor-pointer [transition:var(--transition)] hover:bg-green-tint"
+              <Link
+                href="/"
+                aria-label="home"
+                className="text-green w-10.5 h-10.5 block [transition:var(--transition)] hover:text-green-tint focus:text-green-tint"
               >
-                Resume
-              </a>
+                <IconLogo />
+              </Link>
             </motion.div>
-          )}
-        </div>
 
-        {/* Mobile hamburger */}
-        {isMounted && <Menu />}
+            {/* Desktop nav links */}
+            <div className="hidden md:flex items-center">
+              <ol
+                className="flex justify-between items-center p-0 m-0 list-none"
+                style={{ counterReset: "item 0" }}
+              >
+                {navLinks.map(({ url, name }, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                    className="mx-1.25 relative text-fz-xs"
+                    style={{ counterIncrement: "item 1" }}
+                  >
+                    <Link
+                      href={url}
+                      className="px-2.5 py-2.5 inline-block before:content-['0'_counter(item)_'.'] before:mr-1.25 before:text-green before:text-fz-xxs"
+                    >
+                      {name}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ol>
+
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: navLinks.length * 0.1 }}
+                className="ml-3.75"
+              >
+                <a
+                  href="/Antonijo_Dod_CV_2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green bg-transparent border border-green rounded px-4 py-3 font-mono text-fz-xs leading-none no-underline cursor-pointer [transition:var(--transition)] hover:bg-green-tint"
+                >
+                  Resume
+                </a>
+              </motion.div>
+            </div>
+
+            {/* Mobile hamburger */}
+            <Menu />
+          </>
+        )}
       </nav>
     </header>
   );

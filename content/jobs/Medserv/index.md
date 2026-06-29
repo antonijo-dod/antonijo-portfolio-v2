@@ -17,4 +17,4 @@ url: "https:/medserv.ie/"
   backend logic in Laravel to handle the new routes
 - Transitioned into fullstack responsibilities, contributing across PHP/MySQL legacy backend including debugging complex
   business logic and delivering new features
-- Delivered visual redesigns for company beta websites using Sass and Tailwind CSS
+- Delivered visual redesigns for company beta websites using Sass and Tailwind CSS.

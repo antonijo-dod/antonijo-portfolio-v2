@@ -3,17 +3,18 @@ const IconLogo = () => (
     <title>Logo</title>
     <g id="Logo" transform="translate(-8.000000, -2.000000)">
       <g transform="translate(11.000000, 5.000000)">
-        <path
-          d="m44.889 54.268h-11.758l-1.8555 5.3125h-7.5586l10.801-29.16h8.9648l10.801 29.16h-7.5586zm-9.8828-5.4102h7.9883l-3.9844-11.602z"
-          fill="#64FFDA"
-        />
         <polygon
           id="Shape"
-          stroke="#64FFDA"
+          fill="none"
+          stroke="currentColor"
           strokeWidth="5"
           strokeLinecap="round"
           strokeLinejoin="round"
           points="39 0 0 22 0 67 39 90 78 68 78 23"
+        />
+        <path
+          d="m44.889 54.268h-11.758l-1.8555 5.3125h-7.5586l10.801-29.16h8.9648l10.801 29.16h-7.5586zm-9.8828-5.4102h7.9883l-3.9844-11.602z"
+          fill="currentColor"
         />
       </g>
     </g>
